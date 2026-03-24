@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdrant-rag"
+version = "0.1.0"
+description = "Retrieval-Augmented Generation (RAG) pipeline powered by Qdrant"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "qdrant-client>=1.9.0",
+    "sentence-transformers>=2.7.0",
+    "openai>=1.30.0",
+    "python-dotenv>=1.0.0",
+    "tiktoken>=0.7.0",
+    "PyPDF2>=3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-mock>=3.14.0",
+]
+
+[project.scripts]
+qdrant-ingest = "ingest:main"
+qdrant-query = "query:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
