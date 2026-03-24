@@ -1,3 +1,0 @@
-[console_scripts]
-qdrant-ingest = ingest:main
-qdrant-query = query:main
